@@ -186,27 +186,27 @@ void kservo::JRBOTMove(int direction, int spd)
 {
 	switch (direction)
 	{
-	case 0:
+	case 0: // Forward
 		kservo360(w2d_left_pin, 0, spd);
 		kservo360(w2d_right_pin, 1, spd);
 		break;
-	case 1:
+	case 1: // Backward
 		kservo360(w2d_left_pin, 1, spd);
 		kservo360(w2d_right_pin, 0, spd);
 		break;
-	case 2:
+	case 2: // Turn Left
 		kservo360(w2d_left_pin, 0, 0);
 		kservo360(w2d_right_pin, 1, spd);
 		break;
-	case 3:
+	case 3: // Turn Right
 		kservo360(w2d_left_pin, 0, spd);
 		kservo360(w2d_right_pin, 1, 0);
 		break;
-	case 4:
+	case 4: // Spin Left
 		kservo360(w2d_left_pin, 1, spd);
 		kservo360(w2d_right_pin, 1, spd);
 		break;
-	case 5:
+	case 5: // Spin Right
 		kservo360(w2d_left_pin, 0, spd);
 		kservo360(w2d_right_pin, 0, spd);
 		break;
