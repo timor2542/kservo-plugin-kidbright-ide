@@ -24,6 +24,9 @@ void kservo::init(void)
 	timer_conf2.timer_num = LEDC_TIMER_1;
 	ledc_timer_config(&timer_conf2);
 
+	servoCalibrate(18, 0.6, 2.4); // Calibrate KServo for GPIO18
+	servoCalibrate(19, 0.6, 2.4); // Calibrate KServo for GPIO19
+	servoCalibrate(23, 0.6, 2.4); // Calibrate KServo for GPIO23
 	servoCalibrate(26, 0.6, 2.4); // Calibrate KServo for OUT1
 	servoCalibrate(27, 0.6, 2.4); // Calibrate KServo for OUT2
 	servoCalibrate(15, 0.6, 2.4); // Calibrate KServo for KSERVO1
