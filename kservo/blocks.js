@@ -24,6 +24,18 @@ Blockly.Blocks['kservo270'] = {
               "SERVO2",
               "17"
             ],
+            [
+              "18",
+              "18"
+            ],
+            [
+              "19",
+              "19"
+            ],
+            [
+              "23",
+              "23"
+            ],
           ]
         },
         {
@@ -38,7 +50,7 @@ Blockly.Blocks['kservo270'] = {
       "previousStatement": null,
       "nextStatement": null,
       "colour": 210,
-      "tooltip": "",
+      "tooltip": Blockly.Msg.KSERVO_KSERVO270_TOOLTIP,
       "helpUrl": "https://github.com/timor2542/kservo-plugin-kidbright-ide"
     });
   },
@@ -81,13 +93,25 @@ Blockly.Blocks['kservo270stop'] = {
               "SERVO2",
               "17"
             ],
+            [
+              "18",
+              "18"
+            ],
+            [
+              "19",
+              "19"
+            ],
+            [
+              "23",
+              "23"
+            ],
           ]
         }
       ],
       "previousStatement": null,
       "nextStatement": null,
       "colour": 210,
-      "tooltip": "",
+      "tooltip": Blockly.Msg.KSERVO_KSERVO270_STOP_TOOLTIP,
       "helpUrl": "https://github.com/timor2542/kservo-plugin-kidbright-ide"
     });
   }
@@ -120,6 +144,18 @@ Blockly.Blocks['kservo360'] = {
                 "SERVO2",
                 "17"
               ],
+              [
+                "18",
+                "18"
+              ],
+              [
+                "19",
+                "19"
+              ],
+              [
+                "23",
+                "23"
+              ],
             ]
           },
           {
@@ -148,7 +184,7 @@ Blockly.Blocks['kservo360'] = {
         "previousStatement": null,
         "nextStatement": null,
         "colour": 15,
-        "tooltip": "",
+        "tooltip": Blockly.Msg.KSERVO_KSERVO360_TOOLTIP,
         "helpUrl": "https://github.com/timor2542/kservo-plugin-kidbright-ide"
       });
   },
@@ -191,13 +227,25 @@ Blockly.Blocks['kservo360stop'] = {
               "SERVO2",
               "17"
             ],
+            [
+              "18",
+              "18"
+            ],
+            [
+              "19",
+              "19"
+            ],
+            [
+              "23",
+              "23"
+            ],
           ]
         }
       ],
       "previousStatement": null,
       "nextStatement": null,
       "colour": 15,
-      "tooltip": "",
+      "tooltip": Blockly.Msg.KSERVO_KSERVO360_STOP_TOOLTIP,
       "helpUrl": "https://github.com/timor2542/kservo-plugin-kidbright-ide"
     });
   }
@@ -237,6 +285,18 @@ Blockly.Blocks['setoutpinjrbot'] = {
               "SERVO2",
               "17"
             ],
+            [
+              "18",
+              "18"
+            ],
+            [
+              "19",
+              "19"
+            ],
+            [
+              "23",
+              "23"
+            ],
           ]
         },
         {
@@ -259,13 +319,25 @@ Blockly.Blocks['setoutpinjrbot'] = {
               "SERVO2",
               "17"
             ],
+            [
+              "18",
+              "18"
+            ],
+            [
+              "19",
+              "19"
+            ],
+            [
+              "23",
+              "23"
+            ],
           ]
         }
       ],
       "previousStatement": null,
       "nextStatement": null,
       "colour": 180,
-      "tooltip": "",
+      "tooltip": Blockly.Msg.KSERVO_SETOUTPUTPIN_2WDJRBOT_TOOLTIP,
       "helpUrl": "https://github.com/timor2542/kservo-plugin-kidbright-ide"
     });
   }
@@ -327,7 +399,7 @@ Blockly.Blocks['jrbot'] = {
       "previousStatement": null,
       "nextStatement": null,
       "colour": 180,
-      "tooltip": "",
+      "tooltip": Blockly.Msg.KSERVO_2WDJRBOT_MOVE_TOOLTIP,
       "helpUrl": "https://github.com/timor2542/kservo-plugin-kidbright-ide"
     });
   },
@@ -362,7 +434,7 @@ Blockly.Blocks['jrbot_stop_moving'] = {
       "previousStatement": null,
       "nextStatement": null,
       "colour": 180,
-      "tooltip": "",
+      "tooltip": Blockly.Msg.KSERVO_2WDJRBOT_STOP_MOVING_TOOLTIP,
       "helpUrl": "https://github.com/timor2542/kservo-plugin-kidbright-ide"
     });
   }
