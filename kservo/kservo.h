@@ -63,6 +63,7 @@ public:
     // KidBright JR-BOT (INEX)
     void setJRBOTkServoPin(int _left_pin, int _right_pin);
     void JRBOTMove(int direction, int spd);
+    void JRBOTMove2(int direction, int spd_l, int spd_r);
     void JRBOTStop();
 };
 #endif

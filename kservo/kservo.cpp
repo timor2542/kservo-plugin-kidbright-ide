@@ -212,6 +212,20 @@ void kservo::JRBOTMove(int direction, int spd)
 		break;
 	}
 }
+void kservo::JRBOTMove2(int direction, int spd_l, int spd_r)
+{
+	switch (direction)
+	{
+	case 0: // Forward
+		kservo360(w2d_left_pin, 0, spd_l);
+		kservo360(w2d_right_pin, 1, spd_r);
+		break;
+	case 1: // Backward
+		kservo360(w2d_left_pin, 1, spd_l);
+		kservo360(w2d_right_pin, 0, spd_r);
+		break;
+	}
+}
 void kservo::JRBOTStop()
 {
 	kservo360stop(w2d_left_pin);

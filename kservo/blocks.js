@@ -39,9 +39,6 @@ Blockly.Blocks['kservo270'] = {
           ]
         },
         {
-          "type": "input_dummy"
-        },
-        {
           "type": "input_value",
           "name": "DEGREE_VALUE",
           "check": "Number"
@@ -171,9 +168,6 @@ Blockly.Blocks['kservo360'] = {
                 "1"
               ]
             ]
-          },
-          {
-            "type": "input_dummy"
           },
           {
             "type": "input_value",
@@ -388,9 +382,6 @@ Blockly.Blocks['jrbot'] = {
           ]
         },
         {
-          "type": "input_dummy"
-        },
-        {
           "type": "input_value",
           "name": "SPEED_VALUE",
           "check": "Number"
@@ -415,7 +406,69 @@ Blockly.Blocks['jrbot'] = {
 		`;
 	}
 };
-
+Blockly.Blocks['jrbotlrspd'] = {
+  init: function () {
+    this.jsonInit({
+      "type": "jrbotlrspd",
+      "message0": Blockly.Msg.KSERVO_2WDJRBOT_MOVE_2_MSG,
+      "args0": [
+        {
+          "type": "field_image",
+          "src": "https://a.lnwpic.com/4p6j61.png",
+          "width": 15,
+          "height": 15,
+          "alt": "*",
+          "flipRtl": false
+        },
+        {
+          "type": "field_dropdown",
+          "name": "DIRECTION",
+          "options": [
+            [
+              Blockly.Msg.KSERVO_2WDJRBOT_MOVE_DIRECTION_FD_MSG,
+              "0"
+            ],
+            [
+              Blockly.Msg.KSERVO_2WDJRBOT_MOVE_DIRECTION_BK_MSG,
+              "1"
+            ]
+          ]
+        },
+        {
+          "type": "input_value",
+          "name": "LEFT_SPEED_VALUE",
+          "check": "Number"
+        },
+        {
+          "type": "input_value",
+          "name": "RIGHT_SPEED_VALUE",
+          "check": "Number"
+        },
+      ],
+      "previousStatement": null,
+      "nextStatement": null,
+      "colour": 180,
+      "tooltip": Blockly.Msg.KSERVO_2WDJRBOT_MOVE_2_TOOLTIP,
+      "helpUrl": "https://github.com/timor2542/kservo-plugin-kidbright-ide"
+    });
+  },
+	xmlToolbox: function() {
+		return `
+		<block type="jrbotlrspd">
+			<value name="LEFT_SPEED_VALUE">
+				<shadow type="math_number">
+					<field name="VALUE">50</field>
+				</shadow>
+			</value>
+			<value name="RIGHT_SPEED_VALUE">
+				<shadow type="math_number">
+					<field name="VALUE">50</field>
+				</shadow>
+			</value>
+		</block>
+		`;
+	}
+};
 Blockly.Blocks['jrbot_stop_moving'] = {
   init: function () {
     this.jsonInit({

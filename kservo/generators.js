@@ -46,6 +46,15 @@ Blockly.JavaScript['jrbot'] = function(block) {
   return code;
 };
 
+Blockly.JavaScript['jrbotlrspd'] = function(block) {
+  var dropdown_direction = block.getFieldValue('DIRECTION');
+  var value_left_speed_value = Blockly.JavaScript.valueToCode(block, 'LEFT_SPEED_VALUE', Blockly.JavaScript.ORDER_ATOMIC) || "0";
+  var value_right_speed_value = Blockly.JavaScript.valueToCode(block, 'RIGHT_SPEED_VALUE', Blockly.JavaScript.ORDER_ATOMIC) || "0";
+  // TODO: Assemble javascript into code variable.
+  var code = 'DEV_IO.kservo().JRBOTMove2(' + dropdown_direction + ', ' + value_left_speed_value + ', ' + value_right_speed_value + ');\n';
+  return code;
+};
+
 Blockly.JavaScript['jrbot_stop_moving'] = function(block) {
   // TODO: Assemble javascript into code variable.
   var code = 'DEV_IO.kservo().JRBOTStop();\n';
