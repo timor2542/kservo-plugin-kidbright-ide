@@ -24,9 +24,6 @@ void kservo::init(void)
 	timer_conf2.timer_num = LEDC_TIMER_1;
 	ledc_timer_config(&timer_conf2);
 
-	servoCalibrate(18, 0.6, 2.4); // Calibrate KServo for GPIO18
-	servoCalibrate(19, 0.6, 2.4); // Calibrate KServo for GPIO19
-	servoCalibrate(23, 0.6, 2.4); // Calibrate KServo for GPIO23
 	servoCalibrate(26, 0.6, 2.4); // Calibrate KServo for OUT1
 	servoCalibrate(27, 0.6, 2.4); // Calibrate KServo for OUT2
 	servoCalibrate(15, 0.6, 2.4); // Calibrate KServo for KSERVO1
@@ -131,7 +128,7 @@ void kservo::servoCalibrate(int pin, float min, float max)
 	pwmConfigState[index].duty.max = 0xFFFF * max / 20.0;
 }
 
-void kservo::kservo270angle(int pin, int angle)
+void kservo::kservo270(int pin, int angle)
 {
 	angle = angle < 0 ? 0 : angle;
 	angle = angle > 270 ? 270 : angle;
@@ -152,22 +149,7 @@ void kservo::kservo270stop(int pin)
 	ledc_set_duty(LEDC_HIGH_SPEED_MODE, static_cast<ledc_channel_t>(pwmConfigState[index].ledc_ch), 0xFFFF);
 	ledc_update_duty(LEDC_HIGH_SPEED_MODE, static_cast<ledc_channel_t>(pwmConfigState[index].ledc_ch));
 }
-void kservo::kservo360angle(int pin, int angle)
-{
-	angle = angle < 0 ? 0 : angle;
-	angle = angle > 180 ? 180 : angle;
-
-	int index = getIndexFromPin(pin, true); // isServo = true
-
-	// Cal duty
-	int min = pwmConfigState[index].duty.min;
-	int max = pwmConfigState[index].duty.max;
-	int duty = angle * (max - min) / 180.0 + min;
-
-	ledc_set_duty(LEDC_HIGH_SPEED_MODE, static_cast<ledc_channel_t>(pwmConfigState[index].ledc_ch), duty);
-	ledc_update_duty(LEDC_HIGH_SPEED_MODE, static_cast<ledc_channel_t>(pwmConfigState[index].ledc_ch));
-}
-void kservo::kservo360continuous(int pin, int direction, int spd)
+void kservo::kservo360(int pin, int direction, int spd)
 {
 	spd = spd < 0 ? 0 : spd;
 	spd = spd > 100 ? 100 : spd;
@@ -205,28 +187,28 @@ void kservo::JRBOTMove(int direction, int spd)
 	switch (direction)
 	{
 	case 0: // Forward
-		kservo360continuous(w2d_left_pin, 0, spd);
-		kservo360continuous(w2d_right_pin, 1, spd);
+		kservo360(w2d_left_pin, 0, spd);
+		kservo360(w2d_right_pin, 1, spd);
 		break;
 	case 1: // Backward
-		kservo360continuous(w2d_left_pin, 1, spd);
-		kservo360continuous(w2d_right_pin, 0, spd);
+		kservo360(w2d_left_pin, 1, spd);
+		kservo360(w2d_right_pin, 0, spd);
 		break;
 	case 2: // Turn Left
-		kservo360continuous(w2d_left_pin, 0, 0);
-		kservo360continuous(w2d_right_pin, 1, spd);
+		kservo360(w2d_left_pin, 0, 0);
+		kservo360(w2d_right_pin, 1, spd);
 		break;
 	case 3: // Turn Right
-		kservo360continuous(w2d_left_pin, 0, spd);
-		kservo360continuous(w2d_right_pin, 1, 0);
+		kservo360(w2d_left_pin, 0, spd);
+		kservo360(w2d_right_pin, 1, 0);
 		break;
 	case 4: // Spin Left
-		kservo360continuous(w2d_left_pin, 1, spd);
-		kservo360continuous(w2d_right_pin, 1, spd);
+		kservo360(w2d_left_pin, 1, spd);
+		kservo360(w2d_right_pin, 1, spd);
 		break;
 	case 5: // Spin Right
-		kservo360continuous(w2d_left_pin, 0, spd);
-		kservo360continuous(w2d_right_pin, 0, spd);
+		kservo360(w2d_left_pin, 0, spd);
+		kservo360(w2d_right_pin, 0, spd);
 		break;
 	}
 }
@@ -235,12 +217,12 @@ void kservo::JRBOTMove2(int direction, int spd_l, int spd_r)
 	switch (direction)
 	{
 	case 0: // Forward
-		kservo360continuous(w2d_left_pin, 0, spd_l);
-		kservo360continuous(w2d_right_pin, 1, spd_r);
+		kservo360(w2d_left_pin, 0, spd_l);
+		kservo360(w2d_right_pin, 1, spd_r);
 		break;
 	case 1: // Backward
-		kservo360continuous(w2d_left_pin, 1, spd_l);
-		kservo360continuous(w2d_right_pin, 0, spd_r);
+		kservo360(w2d_left_pin, 1, spd_l);
+		kservo360(w2d_right_pin, 0, spd_r);
 		break;
 	}
 }

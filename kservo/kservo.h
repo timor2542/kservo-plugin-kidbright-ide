@@ -55,10 +55,9 @@ public:
     bool prop_write(int index, char *value);
 
     // method
-    void kservo270angle(int pin, int angle);
+    void kservo270(int pin, int angle);
     void kservo270stop(int pin);
-    void kservo360angle(int pin, int angle);
-    void kservo360continuous(int pin, int direction, int spd);
+    void kservo360(int pin, int direction, int spd);
     void kservo360stop(int pin);
 
     // KidBright JR-BOT (INEX)

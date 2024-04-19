@@ -1,9 +1,9 @@
 
-Blockly.JavaScript['kservo270angle'] = function(block) {
+Blockly.JavaScript['kservo270'] = function(block) {
   var dropdown_pin_value = block.getFieldValue('PIN_VALUE');
   var value_degree_value = Blockly.JavaScript.valueToCode(block, 'DEGREE_VALUE', Blockly.JavaScript.ORDER_ATOMIC) || "0";
   // TODO: Assemble javascript into code variable.
-  var code = 'DEV_IO.kservo().kservo270angle(' + dropdown_pin_value + ', ' + value_degree_value + ');\n';
+  var code = 'DEV_IO.kservo().kservo270(' + dropdown_pin_value + ', ' + value_degree_value + ');\n';
   return code;
 };
 
@@ -14,20 +14,12 @@ Blockly.JavaScript['kservo270stop'] = function(block) {
   return code;
 };
 
-Blockly.JavaScript['kservo360angle'] = function(block) {
-  var dropdown_pin_value = block.getFieldValue('PIN_VALUE');
-  var value_degree_value = Blockly.JavaScript.valueToCode(block, 'DEGREE_VALUE', Blockly.JavaScript.ORDER_ATOMIC) || "0";
-  // TODO: Assemble javascript into code variable.
-  var code = 'DEV_IO.kservo().kservo360angle(' + dropdown_pin_value + ', ' + value_degree_value + ');\n';
-  return code;
-};
-
-Blockly.JavaScript['kservo360continuous'] = function(block) {
+Blockly.JavaScript['kservo360'] = function(block) {
   var dropdown_pin_value = block.getFieldValue('PIN_VALUE');
   var dropdown_direction = block.getFieldValue('DIRECTION');
   var value_speed_value = Blockly.JavaScript.valueToCode(block, 'SPEED_VALUE', Blockly.JavaScript.ORDER_ATOMIC) || "0";
   // TODO: Assemble javascript into code variable.
-  var code = 'DEV_IO.kservo().kservo360continuous(' + dropdown_pin_value + ', ' + dropdown_direction + ', ' + value_speed_value + ');\n';
+  var code = 'DEV_IO.kservo().kservo360(' + dropdown_pin_value + ', ' + dropdown_direction + ', ' + value_speed_value + ');\n';
   return code;
 };
 

@@ -1,15 +1,13 @@
-Blockly.Msg.KSERVO_KSERVO270_ANGLE_MSG = "Grey kservo Pin %1 at Angle %2 °";
-Blockly.Msg.KSERVO_KSERVO270_ANGLE_TOOLTIP = "Set grey kservo's angle.";
+Blockly.Msg.KSERVO_KSERVO270_MSG = "Grey kservo Pin %1 at Angle %2 °";
+Blockly.Msg.KSERVO_KSERVO270_TOOLTIP = "Set grey kservo's angle.";
 
 Blockly.Msg.KSERVO_KSERVO270_STOP_MSG = "Grey kservo Stop Pin %1";
 Blockly.Msg.KSERVO_KSERVO270_STOP_TOOLTIP = "Deattach grey kservo.";
 
-Blockly.Msg.KSERVO_KSERVO360_ANGLE_MSG = "Orange kservo Pin %1 at Angle %2 °"
-Blockly.Msg.KSERVO_KSERVO360_CONTINUOUS_MSG = "Orange kservo Pin %1 Direction %2 at Speed %3 %%";
+Blockly.Msg.KSERVO_KSERVO360_MSG = "Orange kservo Pin %1 Direction %2 at Speed %3 %%";
 Blockly.Msg.KSERVO_KSERVO360_DIRECTION_CCW_MSG = "↺ Counterclockwise";
 Blockly.Msg.KSERVO_KSERVO360_DIRECTION_CW_MSG = "↻ Clockwise";
-Blockly.Msg.KSERVO_KSERVO360_ANGLE_TOOLTIP = "Set the orange kservo's degree to determine its direction and speed.";
-Blockly.Msg.KSERVO_KSERVO360_CONTINUOUS_TOOLTIP = "Set the orange kservo's direction and speed.";
+Blockly.Msg.KSERVO_KSERVO360_TOOLTIP = "Set orange kservo's direction and speed.";
 
 Blockly.Msg.KSERVO_KSERVO360_STOP_MSG = "Orange kservo Stop Pin %1";
 Blockly.Msg.KSERVO_KSERVO360_STOP_TOOLTIP = "Deattach orange kservo.";

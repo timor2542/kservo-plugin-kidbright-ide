@@ -1,8 +1,8 @@
-Blockly.Blocks['kservo270angle'] = {
+Blockly.Blocks['kservo270'] = {
   init: function () {
     this.jsonInit({
-      "type": "kservo270angle",
-      "message0": Blockly.Msg.KSERVO_KSERVO270_ANGLE_MSG,
+      "type": "kservo270",
+      "message0": Blockly.Msg.KSERVO_KSERVO270_MSG,
       "args0": [
         {
           "type": "field_dropdown",
@@ -47,13 +47,13 @@ Blockly.Blocks['kservo270angle'] = {
       "previousStatement": null,
       "nextStatement": null,
       "colour": 210,
-      "tooltip": Blockly.Msg.KSERVO_KSERVO270_ANGLE_TOOLTIP,
+      "tooltip": Blockly.Msg.KSERVO_KSERVO270_TOOLTIP,
       "helpUrl": "https://github.com/timor2542/kservo-plugin-kidbright-ide"
     });
   },
 	xmlToolbox: function() {
 		return `
-		<block type="kservo270angle">
+		<block type="kservo270">
 			<value name="DEGREE_VALUE">
 				<shadow type="math_number">
 					<field name="VALUE">135</field>
@@ -114,78 +114,12 @@ Blockly.Blocks['kservo270stop'] = {
   }
 };
 
-Blockly.Blocks['kservo360angle'] = {
-  init: function () {
-    this.jsonInit({
-      "type": "kservo360angle",
-      "message0": Blockly.Msg.KSERVO_KSERVO360_ANGLE_MSG,
-      "args0": [
-        {
-          "type": "field_dropdown",
-          "name": "PIN_VALUE",
-          "options": [
-            [
-              "OUT1",
-              "26"
-            ],
-            [
-              "OUT2",
-              "27"
-            ],
-            [
-              "SERVO1",
-              "15"
-            ],
-            [
-              "SERVO2",
-              "17"
-            ],
-            [
-              "18",
-              "18"
-            ],
-            [
-              "19",
-              "19"
-            ],
-            [
-              "23",
-              "23"
-            ],
-          ]
-        },
-        {
-          "type": "input_value",
-          "name": "DEGREE_VALUE",
-          "check": "Number"
-        }
-      ],
-      "previousStatement": null,
-      "nextStatement": null,
-      "colour": 15,
-      "tooltip": Blockly.Msg.KSERVO_KSERVO360_ANGLE_TOOLTIP,
-      "helpUrl": "https://github.com/timor2542/kservo-plugin-kidbright-ide"
-    });
-  },
-	xmlToolbox: function() {
-		return `
-		<block type="kservo360angle">
-			<value name="DEGREE_VALUE">
-				<shadow type="math_number">
-					<field name="VALUE">90</field>
-				</shadow>
-			</value>
-		</block>
-		`;
-	}
-};
-
-Blockly.Blocks['kservo360continuous'] = {
+Blockly.Blocks['kservo360'] = {
   init: function () {
     this.jsonInit(
       {
-        "type": "kservo360continuous",
-        "message0": Blockly.Msg.KSERVO_KSERVO360_CONTINUOUS_MSG,
+        "type": "kservo360",
+        "message0": Blockly.Msg.KSERVO_KSERVO360_MSG,
         "args0": [
           {
             "type": "field_dropdown",
@@ -244,13 +178,13 @@ Blockly.Blocks['kservo360continuous'] = {
         "previousStatement": null,
         "nextStatement": null,
         "colour": 15,
-        "tooltip": Blockly.Msg.KSERVO_KSERVO360_CONTINUOUS_TOOLTIP,
+        "tooltip": Blockly.Msg.KSERVO_KSERVO360_TOOLTIP,
         "helpUrl": "https://github.com/timor2542/kservo-plugin-kidbright-ide"
       });
   },
 	xmlToolbox: function() {
 		return `
-		<block type="kservo360continuous">
+		<block type="kservo360">
 			<value name="SPEED_VALUE">
 				<shadow type="math_number">
 					<field name="VALUE">50</field>
