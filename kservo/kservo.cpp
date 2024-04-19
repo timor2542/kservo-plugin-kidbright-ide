@@ -143,12 +143,6 @@ void kservo::kservo270(int pin, int angle)
 	ledc_set_duty(LEDC_HIGH_SPEED_MODE, static_cast<ledc_channel_t>(pwmConfigState[index].ledc_ch), duty);
 	ledc_update_duty(LEDC_HIGH_SPEED_MODE, static_cast<ledc_channel_t>(pwmConfigState[index].ledc_ch));
 }
-void kservo::kservo270stop(int pin)
-{
-	int index = getIndexFromPin(pin, true); // isServo = true
-	ledc_set_duty(LEDC_HIGH_SPEED_MODE, static_cast<ledc_channel_t>(pwmConfigState[index].ledc_ch), 0xFFFF);
-	ledc_update_duty(LEDC_HIGH_SPEED_MODE, static_cast<ledc_channel_t>(pwmConfigState[index].ledc_ch));
-}
 void kservo::kservo360(int pin, int direction, int spd)
 {
 	spd = spd < 0 ? 0 : spd;
@@ -169,7 +163,8 @@ void kservo::kservo360(int pin, int direction, int spd)
 	ledc_set_duty(LEDC_HIGH_SPEED_MODE, static_cast<ledc_channel_t>(pwmConfigState[index].ledc_ch), duty);
 	ledc_update_duty(LEDC_HIGH_SPEED_MODE, static_cast<ledc_channel_t>(pwmConfigState[index].ledc_ch));
 }
-void kservo::kservo360stop(int pin)
+
+void kservo::kservostop(int pin)
 {
 	int index = getIndexFromPin(pin, true); // isServo = true
 	ledc_set_duty(LEDC_HIGH_SPEED_MODE, static_cast<ledc_channel_t>(pwmConfigState[index].ledc_ch), 0xFFFF);
@@ -228,7 +223,7 @@ void kservo::JRBOTMove2(int direction, int spd_l, int spd_r)
 }
 void kservo::JRBOTStop()
 {
-	kservo360stop(w2d_left_pin);
-	kservo360stop(w2d_right_pin);
+	kservostop(w2d_left_pin);
+	kservostop(w2d_right_pin);
 }
 #endif

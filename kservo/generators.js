@@ -7,13 +7,6 @@ Blockly.JavaScript['kservo270'] = function(block) {
   return code;
 };
 
-Blockly.JavaScript['kservo270stop'] = function(block) {
-  var dropdown_pin_value = block.getFieldValue('PIN_VALUE');
-  // TODO: Assemble javascript into code variable.
-  var code = 'DEV_IO.kservo().kservo270stop(' + dropdown_pin_value + ');\n';
-  return code;
-};
-
 Blockly.JavaScript['kservo360'] = function(block) {
   var dropdown_pin_value = block.getFieldValue('PIN_VALUE');
   var dropdown_direction = block.getFieldValue('DIRECTION');
@@ -23,10 +16,10 @@ Blockly.JavaScript['kservo360'] = function(block) {
   return code;
 };
 
-Blockly.JavaScript['kservo360stop'] = function(block) {
+Blockly.JavaScript['kservostop'] = function(block) {
   var dropdown_pin_value = block.getFieldValue('PIN_VALUE');
   // TODO: Assemble javascript into code variable.
-  var code = 'DEV_IO.kservo().kservo360stop(' + dropdown_pin_value + ');\n';
+  var code = 'DEV_IO.kservo().kservostop(' + dropdown_pin_value + ');\n';
   return code;
 };
 
@@ -59,4 +52,18 @@ Blockly.JavaScript['jrbot_stop_moving'] = function(block) {
   // TODO: Assemble javascript into code variable.
   var code = 'DEV_IO.kservo().JRBOTStop();\n';
   return code;
+};
+
+Blockly.JavaScript["kservo270.degree_number"] = function(block) {
+	// Numeric value.
+	var code = parseFloat(block.getFieldValue('VALUE'));
+	var order = code >= 0 ? Blockly.JavaScript.ORDER_ATOMIC : Blockly.JavaScript.ORDER_UNARY_NEGATION;
+	return [code, order];
+};
+
+Blockly.JavaScript["kservo360.speed_number"] = function(block) {
+	// Numeric value.
+	var code = parseFloat(block.getFieldValue('VALUE'));
+	var order = code >= 0 ? Blockly.JavaScript.ORDER_ATOMIC : Blockly.JavaScript.ORDER_UNARY_NEGATION;
+	return [code, order];
 };

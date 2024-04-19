@@ -56,9 +56,8 @@ public:
 
     // method
     void kservo270(int pin, int angle);
-    void kservo270stop(int pin);
     void kservo360(int pin, int direction, int spd);
-    void kservo360stop(int pin);
+    void kservostop(int pin);
 
     // KidBright JR-BOT (INEX)
     void setJRBOTkServoPin(int _left_pin, int _right_pin);
